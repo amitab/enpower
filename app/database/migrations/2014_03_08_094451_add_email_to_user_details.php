@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UserDetailsTable extends Migration {
+class AddEmailToUserDetails extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,13 +14,7 @@ class UserDetailsTable extends Migration {
 	{
 		Schema::table('user_details', function(Blueprint $table)
 		{
-			
-			$table->increments('id');
-			$table->string('first_name');
-			$table->string('last_name');
-			$table->date('dob');
-			$table->integer('uid');
-			
+			$table->string('email');
 		});
 	}
 
@@ -31,7 +25,10 @@ class UserDetailsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('user_details');
+		Schema::table('user_details', function(Blueprint $table)
+		{
+			$table->dropColumn('email');
+		});
 	}
 
 }

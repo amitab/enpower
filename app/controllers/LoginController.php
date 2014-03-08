@@ -8,6 +8,7 @@ class LoginController extends BaseController {
     }
     
     public function login() {
+        
         try
         {
             // Set login credentials
@@ -49,6 +50,9 @@ class LoginController extends BaseController {
         {
             echo 'User is banned.';
         }
+        
+        return 'Success';
+        
     }
     
 }

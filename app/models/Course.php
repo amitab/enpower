@@ -12,14 +12,6 @@ class Course extends ValidationModel {
 	 */
 	protected $table = 'courses';
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-
-	public function users() {
-        return $this->hasMany('User');
-    }
+	public $timestamps = false;
 
 }

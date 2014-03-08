@@ -11,4 +11,8 @@
 |
 */
 
-Route::get('/', 'RegisterController@registerUser');
+Route::get('/', function() {
+
+    
+
+});
