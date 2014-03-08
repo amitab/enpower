@@ -3,8 +3,8 @@
 
 class QuizController extends BaseController {
     
-    public function index() {
-        
+    public function takeQuiz($quizId) {
+        //$questions = 
     }
     
     public function completeQuiz($quizId) {
