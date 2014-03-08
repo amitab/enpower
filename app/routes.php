@@ -109,3 +109,13 @@ Route::get('create_course', function() {
     $course->save();
     
 });
+
+
+Route::get('test', function() {
+
+    $userCourseIds = DB::table('user_courses')->where('email', '=', 'john.doe@example.com')->lists('course_id');
+    
+    $localCourses = Course::where('pincode', '=', '238283893')->get();
+    return $localCourses;
+    
+});

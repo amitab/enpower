@@ -41,9 +41,7 @@ class SyllabusController extends BaseController {
     public function viewSyllabus($syllabusId) {
     
         $syllabus = Syllabus::find($syllabusId);
-        
-        
-    
+            
     }
 
 }

@@ -10,11 +10,23 @@ class QuizController extends BaseController {
     public function completeQuiz($quizId) {
             
         $questions = Input::get('question');
-        foreach($questions as $question) {
+        $score = 0;
+        $user = Sentry::getUser();
+        
+        foreach($questions as $key=>$answer) {
 
-            
+            $questionData = Question::find($key);
+            if($answer == $questionData->answer)
+                $score++;
 
         }
+             
+        $userQuiz = new UserQuiz;
+        $userQuiz->email = $user->email;
+        $userQuiz->score = $score;
+        $userQuiz->quiz_id = $quizId;
+             
+        $userQuiz->save();
              
     }
     
