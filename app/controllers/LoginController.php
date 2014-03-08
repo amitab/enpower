@@ -51,7 +51,7 @@ class LoginController extends BaseController {
             echo 'User is banned.';
         }
         
-        return 'Success';
+        
         
     }
     
