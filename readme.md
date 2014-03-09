@@ -1,5 +1,5 @@
 # Enpower
-## pink enpower (On-power) blue
+## pink enpower (On-par) with blue
 
 So what does Enpower(On-power) do for you? 
 
