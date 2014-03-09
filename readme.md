@@ -1,5 +1,5 @@
-# Enpower
-## Her Enpower(on-par) with Him
+# Eñpower
+## Her Eñpower(on-par) with Him
 
 So what does Eñpower(On-power) do for you? 
 
