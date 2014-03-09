@@ -4,7 +4,11 @@
 class LoginController extends BaseController {
     
     public function index() {
-        
+        $error = Session::get('error');
+        if(!empty($error))
+        return View::make('login')->with('error', $error);
+        else 
+        return View::make('login');
     }
     
     public function login() {
@@ -22,36 +26,43 @@ class LoginController extends BaseController {
         }
         catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
         {
-            echo 'Login field is required.';
+            Session::flash('error', 'Login is required.');
+            return Redirect::back();
         }
         catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
         {
-            echo 'Password field is required.';
+            Session::flash('error', 'Login is required.');
+            return Redirect::back();
         }
         catch (Cartalyst\Sentry\Users\WrongPasswordException $e)
         {
-            echo 'Wrong password, try again.';
+            Session::flash('error', 'Wrong Password.');
+            return Redirect::back();
         }
         catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
         {
-            echo 'User was not found.';
+            Session::flash('error', 'User does not exist.');
+            return Redirect::back();
         }
         catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
         {
-            echo 'User is not activated.';
+            Session::flash('error', 'User not activated.');
+            return Redirect::back();
         }
 
         // The following is only required if throttle is enabled
         catch (Cartalyst\Sentry\Throttling\UserSuspendedException $e)
         {
-            echo 'User is suspended.';
+            Session::flash('error', 'User is suspended.');
+            return Redirect::back();
         }
         catch (Cartalyst\Sentry\Throttling\UserBannedException $e)
         {
-            echo 'User is banned.';
+            Session::flash('error', 'User is banned.');
+            return Redirect::back();
         }
         
-        
+        return Redirect::to('dashboard');
         
     }
     

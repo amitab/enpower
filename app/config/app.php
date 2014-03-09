@@ -107,6 +107,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Cartalyst\Sentry\SentryServiceProvider',
+        'Travisjryan\Twilio\TwilioServiceProvider',
 	),
 
 	/*
@@ -173,7 +174,8 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
         'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-        'ValidationModel' => 'Way\Database\Model'
+        'ValidationModel' => 'Way\Database\Model',
+        'Twilio' => 'Travisjryan\Twilio\Facades\Twilio',
 	),
 
 );

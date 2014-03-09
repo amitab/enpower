@@ -11,51 +11,8 @@
 |
 */
 
-Route::get('login', function() {
-    try
-{
-    // Set login credentials
-    $credentials = array(
-        'email'    => 'john.doe@example.com',
-        'password' => 'test',
-    );
 
-    // Try to authenticate the user
-    $user = Sentry::authenticate($credentials, false);
-}
-catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
-{
-    echo 'Login field is required.';
-}
-catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
-{
-    echo 'Password field is required.';
-}
-catch (Cartalyst\Sentry\Users\WrongPasswordException $e)
-{
-    echo 'Wrong password, try again.';
-}
-catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
-{
-    echo 'User was not found.';
-}
-catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
-{
-    echo 'User is not activated.';
-}
-
-// The following is only required if throttle is enabled
-catch (Cartalyst\Sentry\Throttling\UserSuspendedException $e)
-{
-    echo 'User is suspended.';
-}
-catch (Cartalyst\Sentry\Throttling\UserBannedException $e)
-{
-    echo 'User is banned.';
-}
-});
-
-Route::get('{courseId}', 'EnrollController@index')->where('courseId', '[0-9]+');
+/*Route::get('{courseId}', 'EnrollController@index')->where('courseId', '[0-9]+');
 
 
 Route::get('create_user', function() {
@@ -110,12 +67,31 @@ Route::get('create_course', function() {
     
 });
 
-
+*/
 Route::get('test', function() {
 
-    $userCourseIds = DB::table('user_courses')->where('email', '=', 'john.doe@example.com')->lists('course_id');
-    
-    $localCourses = Course::where('pincode', '=', '238283893')->get();
-    return $localCourses;
+    Twilio::message('+919663812519', 'Pink Elephants and Happy Rainbows');
     
 });
+
+Route::get('course', function() {
+
+    return View::make('coursedetails');
+
+});
+
+
+
+Route::post('send/sms', 'SmsController@submit');
+
+Route::get('login', 'LoginController@index');
+
+Route::post('login/verify', 'LoginController@login');
+
+Route::get('register', 'RegisterController@index');
+
+Route::post('register/do', 'RegisterController@registerUser');
+
+
+
+Route::get('dashboard', 'DashboardController@index');
