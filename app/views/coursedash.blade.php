@@ -333,8 +333,18 @@
             <div class="pull-right" style="margin-top: -10px;">
     
                 <p style="margin-bottom: 10px;">Hello, {{ $userName }}</p>
-                <input type="submit" value="LogOut" class="login" />
-            </div>
+                 <div class="container" style="
+    margin-top: 0;
+    height: auto;
+"><div class="pg_rt" style="
+    display: inline-block;
+    float: right;
+">
+    <input type="submit" value="LogOut" class="login">
+   
+</div><div style="display: inline-block;
+"><img src="img/env.png" width="120">
+</div></div>
 
         </div>
         <div class="navbar-wrapper">

@@ -710,7 +710,7 @@ body {
         -o-transform: perspective(1000) rotateX(0deg);
         transform: perspective(1000) rotateX(0deg); }
     .content li:nth-child(1) .card-back, .content li:nth-child(9) .card-back {
-      background: #6b6b6b; }
+      background: #666666; }
     .content li:nth-child(2) .card-back {
       background: #22cfda; }
     .content li:nth-child(3) .card-back {
