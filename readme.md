@@ -1,7 +1,7 @@
 # Enpower
 ## Her Enpower(on-par) with Him
 
-So what does Enpower(On-power) do for you? 
+So what does Eñpower(On-power) do for you? 
 
 It empowers you to stand up for yourself with the latest skillsets to endure and face the 'kalyuga'.
 With a varitey of organicaly generated courses that are location and need driven, Enpower bridges the skill development and employer needs effectively.
