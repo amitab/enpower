@@ -1,5 +1,5 @@
 # Enpower
-## pink enpower (On-par) with blue
+## Her Enpower(on-par) with Him
 
 So what does Enpower(On-power) do for you? 
 
