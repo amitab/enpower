@@ -770,7 +770,7 @@ body {
       width: 55%; }
   .content p {
     line-height: 1.3em;
-    color: #A7A3A3;
+    color: white;
     width: 90%;
     float: right;
     margin-right: 20px; }
@@ -820,3 +820,8 @@ body {
       width: 100%; }
   .content li {
     width: 33%; } }
+	
+	.content h2 a {
+		
+  color: white!important;	
+	}
